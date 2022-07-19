@@ -34,13 +34,6 @@ export const ImgContainer = styled.div`
     width: auto;
 `;
 
-export const ImgAndPlaces = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-`;
-
 export const List = styled.div`
     display: flex;
     flex-direction: column;

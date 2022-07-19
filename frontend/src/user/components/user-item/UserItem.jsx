@@ -1,12 +1,5 @@
 import React from "react";
-import {
-    Container,
-    UserCard,
-    Title,
-    ImgContainer,
-    ImgAndPlaces,
-    List,
-} from "./styled";
+import { Container, UserCard, Title, ImgContainer, List } from "./styled";
 
 const UserItem = (props) => {
     return (
