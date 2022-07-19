@@ -7,24 +7,17 @@ const MainNavbar = () => {
     const props = {
         items: [
             {
-                text: "Home",
+                text: "Places",
                 link: "/",
             },
             {
-                text: "Doc",
-                link: "/",
-            },
-            {
-                text: "Custom",
-                link: "/",
-            },
-            {
-                text: "Contact",
+                text: "About",
                 link: "/",
             },
         ],
         logo: {
             text: "MySplace",
+            link: "/",
         },
         style: {
             barStyles: {
