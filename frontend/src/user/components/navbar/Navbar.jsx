@@ -12,7 +12,7 @@ const MainNavbar = () => {
             },
             {
                 text: "About",
-                link: "/",
+                link: "/about",
             },
         ],
         logo: {
