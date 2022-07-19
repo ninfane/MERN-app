@@ -6,7 +6,7 @@ const PlaceList = (props) => {
         return <div>No places found</div>;
     }
     return (
-        <ul>
+        <div>
             {props.items.map((place) => (
                 <PlaceItem
                     key={place.id}
@@ -19,7 +19,7 @@ const PlaceList = (props) => {
                     coordinates={place.coordinates}
                 ></PlaceItem>
             ))}
-        </ul>
+        </div>
     );
 };
 
