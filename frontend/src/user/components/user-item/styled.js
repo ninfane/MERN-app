@@ -15,6 +15,7 @@ export const UserCard = styled.div`
     min-width: 300px;
     margin: 0.5rem 0.5rem;
     border-radius: 8px;
+    cursor: pointer;
     box-shadow: 2px 2px 10px black;
     height: 100%;
     background: ${colors.mainRed};

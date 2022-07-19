@@ -9,7 +9,6 @@ const UserItem = (props) => {
                     <img
                         src={props.image}
                         alt={`${props.name} profile`}
-                        s
                         style={{
                             borderRadius: "100px",
                         }}
@@ -18,11 +17,11 @@ const UserItem = (props) => {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                     <Title>{props.name}</Title>
                     <List>
-                        <Title>
-                            {props.placeCount.length === 1
-                                ? "Lugar"
-                                : "Lugares"}
-                        </Title>
+                        <p>
+                            {props.placeCount.length === 0
+                                ? "No places"
+                                : "Places"}
+                        </p>
                     </List>
                 </div>
             </UserCard>
