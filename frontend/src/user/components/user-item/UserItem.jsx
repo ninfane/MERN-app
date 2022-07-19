@@ -12,20 +12,26 @@ const UserItem = (props) => {
     return (
         <Container>
             <UserCard>
-                <Title>{props.name}</Title>
-                <ImgAndPlaces>
-                    <ImgContainer>
-                        <img
-                            src={props.image}
-                            alt={`${props.name} profile`}
-                        ></img>
-                    </ImgContainer>
+                <ImgContainer>
+                    <img
+                        src={props.image}
+                        alt={`${props.name} profile`}
+                        s
+                        style={{
+                            borderRadius: "100px",
+                        }}
+                    ></img>
+                </ImgContainer>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                    <Title>{props.name}</Title>
                     <List>
-                        {props.placeCount.map((place, index) => {
-                            return <p key={index}>{place}</p>;
-                        })}
+                        <Title>
+                            {props.placeCount.length === 1
+                                ? "Lugar"
+                                : "Lugares"}
+                        </Title>
                     </List>
-                </ImgAndPlaces>
+                </div>
             </UserCard>
         </Container>
     );
