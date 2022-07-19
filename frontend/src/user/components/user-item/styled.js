@@ -24,6 +24,10 @@ export const UserCard = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 1rem;
+    a {
+        text-decoration: none;
+        color: ${colors.text};
+    }
 `;
 
 export const Title = styled.h1`

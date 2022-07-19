@@ -1,10 +1,10 @@
 import React from "react";
-import { UserCard } from "../../../user/components/user-item/styled";
+import { PlaceCard } from "../place-item/styled";
 
 const PlaceItem = (props) => {
     return (
-        <li>
-            <UserCard>
+        <div>
+            <PlaceCard>
                 <div>
                     <img src={props.image} alt={props.title}></img>
                 </div>
@@ -18,8 +18,8 @@ const PlaceItem = (props) => {
                     <button>EDIT</button>
                     <button>DELETE</button>
                 </div>
-            </UserCard>
-        </li>
+            </PlaceCard>
+        </div>
     );
 };
 

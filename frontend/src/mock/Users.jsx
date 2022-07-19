@@ -1,30 +1,30 @@
 export const usersDummy = [
     {
-        id: "56588136ef",
+        id: "u1",
         name: "Marina Crespo",
         places: ["San Luis", "Santa Fe", "Buenos Aires"],
         image: "https://picsum.photos/100/100",
     },
     {
-        id: "5658816ef",
+        id: "u2",
         name: "Gabriel Carrillo",
         places: ["Parana", "Rosario", "Mar Del Plata"],
         image: "https://picsum.photos/100/100",
     },
     {
-        id: "56582136ef",
+        id: "u3",
         name: "Lucas Arismendi",
         places: ["Mercedes", "Santa Fe", "Buenos Aires"],
         image: "https://picsum.photos/100/100",
     },
     {
-        id: "5658816gf",
+        id: "u4",
         name: "Anahi Cignetti",
         places: ["San Carlos", "Santa Fe", "San Justo"],
         image: "https://picsum.photos/100/100",
     },
     {
-        id: "5658816rf",
+        id: "u5",
         name: "Gonzalo Fernandez",
         places: ["Buenos Aires"],
         image: "https://picsum.photos/100/100",
