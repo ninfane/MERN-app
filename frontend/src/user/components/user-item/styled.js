@@ -10,24 +10,34 @@ export const Container = styled.div`
 `;
 
 export const UserCard = styled.div`
-    padding: 1rem;
-    width: 100%;
-    min-width: 300px;
     margin: 0.5rem 0.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 2px 2px 10px black;
-    height: 100%;
-    background: ${colors.mainRed};
-    color: ${colors.text};
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    font-size: 1rem;
+    flex-direction: row;
+    background: ${colors.mainRed};
+    width: 90%;
+    height: 100%;
+    min-width: 300px;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 16px;
+    :hover {
+        background: ${colors.text};
+        a {
+            color: ${colors.mainRed};
+        }
+    }
     a {
-        text-decoration: none;
+        text-decoration: none !important;
         color: ${colors.text};
     }
+`;
+
+export const TextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    align-items: flex-start;
+    justify-content: space-evenly;
 `;
 
 export const Title = styled.h1`
