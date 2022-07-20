@@ -14,7 +14,7 @@ export const placesDummy = [
     },
     {
         id: "p2",
-        title: "San Francisco",
+        title: "Brooklyn",
         description:
             "Reprehenderit fugiat mollit sint exercitation deserunt aute consectetur.",
         image: "https://picsum.photos/200",
@@ -27,7 +27,7 @@ export const placesDummy = [
     },
     {
         id: "p3",
-        title: "San Francisco",
+        title: "Boston",
         description:
             "Reprehenderit fugiat mollit sint exercitation deserunt aute consectetur.",
         image: "https://picsum.photos/200",
