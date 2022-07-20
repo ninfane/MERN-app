@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const UserItem = (props) => {
     return (
-        <Link to={`/${props.id}/places`}>
+        <Link to={`/${props.id}/places`} style={{ textDecoration: "none" }}>
             <Container>
                 <UserCard>
                     <ImgContainer>
