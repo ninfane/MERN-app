@@ -2,8 +2,6 @@ const express = require("express");
 
 const placesControllers = require("../controllers/places-controller");
 
-const HttpError = require("../models/http-error");
-
 const router = express.Router();
 
 //TODO reemplazar esta data hardcodeada
