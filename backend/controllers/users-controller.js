@@ -25,7 +25,7 @@ let DUMMY_USERS = [
     },
 ];
 
-const getAllUsers = (res) => {
+const getAllUsers = (req, res, next) => {
     res.json({ users: DUMMY_USERS });
 };
 

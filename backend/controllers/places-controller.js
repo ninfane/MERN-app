@@ -29,7 +29,7 @@ let DUMMY_PLACES = [
     },
 ];
 
-const getPlaceById = (req, res) => {
+const getPlaceById = (req, res, next) => {
     //!busco el query en los parametros de la request
     const placeId = req.params.placeid;
     const place = DUMMY_PLACES.find((dp) => {
@@ -42,7 +42,7 @@ const getPlaceById = (req, res) => {
     res.json({ place });
 };
 
-const getPlacesByUser = (req, res) => {
+const getPlacesByUser = (req, res, next) => {
     const userId = req.params.userid;
     const places = DUMMY_PLACES.filter((dp) => dp.creator == userId && dp);
     if (places.length == 0) {
@@ -54,7 +54,7 @@ const getPlacesByUser = (req, res) => {
     res.json({ places });
 };
 
-const getAllPlaces = (res) => {
+const getAllPlaces = (req, res, next) => {
     const places = DUMMY_PLACES;
     if (places.length == 0) {
         throw new HttpError(
@@ -65,7 +65,7 @@ const getAllPlaces = (res) => {
     res.json({ places });
 };
 
-const createPlace = (req, res) => {
+const createPlace = (req, res, next) => {
     //! hago un request del contenido del body que viene parseado
     const { title, description, creator } = req.body;
     const createdPlace = {
@@ -80,7 +80,7 @@ const createPlace = (req, res) => {
     res.status(201).json({ place: createPlace });
 };
 
-const updatePlace = (req, res) => {
+const updatePlace = (req, res, next) => {
     const { title, description } = req.body;
     const placeId = req.params.placeid;
 
@@ -94,7 +94,7 @@ const updatePlace = (req, res) => {
     res.status(200).json({ place: updatedPlace });
 };
 
-const delPlace = (req, res) => {
+const delPlace = (req, res, next) => {
     const placeId = req.params.placeid;
     DUMMY_PLACES = DUMMY_PLACES.filter((dp) => dp.id != placeId);
 
