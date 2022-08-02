@@ -2,7 +2,7 @@ const e = require("express");
 const uuid = require("uuid/v4");
 const HttpError = require("../models/http-error");
 
-const DUMMY_PLACES = [
+let DUMMY_PLACES = [
     {
         id: "p1",
         title: "Boston",
@@ -95,9 +95,10 @@ const updatePlace = (req, res, next) => {
 };
 
 const delPlace = (req, res, next) => {
-    const { id } = req.body;
-    const delPlace = DUMMY_PLACES.find((dp) => dp.id == id);
-    res.status(200).json({ delPlace });
+    const placeId = req.params.placeid;
+    DUMMY_PLACES = DUMMY_PLACES.filter((dp) => dp.id != placeId);
+
+    res.status(200).json({ message: "deleted place" });
 };
 
 exports.getPlaceById = getPlaceById;
