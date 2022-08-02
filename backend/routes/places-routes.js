@@ -18,4 +18,8 @@ router.post("/", placesControllers.createPlace);
 
 router.get("/", placesControllers.getAllPlaces);
 
+router.put("/:placeid", placesControllers.updatePlace);
+
+router.delete("/:placeid", placesControllers.delPlace);
+
 module.exports = router;

@@ -1,7 +1,8 @@
+const e = require("express");
 const uuid = require("uuid/v4");
 const HttpError = require("../models/http-error");
 
-const DUMMY_PLACES = [
+let DUMMY_PLACES = [
     {
         id: "p1",
         title: "Boston",
@@ -28,7 +29,7 @@ const DUMMY_PLACES = [
     },
 ];
 
-const getPlaceById = (req, res, next) => {
+const getPlaceById = (req, res) => {
     //!busco el query en los parametros de la request
     const placeId = req.params.placeid;
     const place = DUMMY_PLACES.find((dp) => {
@@ -41,7 +42,7 @@ const getPlaceById = (req, res, next) => {
     res.json({ place });
 };
 
-const getPlacesByUser = (req, res, next) => {
+const getPlacesByUser = (req, res) => {
     const userId = req.params.userid;
     const places = DUMMY_PLACES.filter((dp) => dp.creator == userId && dp);
     if (places.length == 0) {
@@ -53,7 +54,7 @@ const getPlacesByUser = (req, res, next) => {
     res.json({ places });
 };
 
-const getAllPlaces = (req, res, next) => {
+const getAllPlaces = (res) => {
     const places = DUMMY_PLACES;
     if (places.length == 0) {
         throw new HttpError(
@@ -64,7 +65,7 @@ const getAllPlaces = (req, res, next) => {
     res.json({ places });
 };
 
-const createPlace = (req, res, next) => {
+const createPlace = (req, res) => {
     //! hago un request del contenido del body que viene parseado
     const { title, description, creator } = req.body;
     const createdPlace = {
@@ -79,7 +80,30 @@ const createPlace = (req, res, next) => {
     res.status(201).json({ place: createPlace });
 };
 
+const updatePlace = (req, res) => {
+    const { title, description } = req.body;
+    const placeId = req.params.placeid;
+
+    const updatedPlace = { ...DUMMY_PLACES.find((dp) => dp.id == placeId) };
+    updatedPlace.title = title;
+    updatedPlace.description = description;
+
+    const placeIndex = DUMMY_PLACES.findIndex((p) => p.id == placeId);
+    DUMMY_PLACES[placeIndex] = updatedPlace;
+
+    res.status(200).json({ place: updatedPlace });
+};
+
+const delPlace = (req, res) => {
+    const placeId = req.params.placeid;
+    DUMMY_PLACES = DUMMY_PLACES.filter((dp) => dp.id != placeId);
+
+    res.status(200).json({ message: "deleted place" });
+};
+
 exports.getPlaceById = getPlaceById;
 exports.getPlacesByUser = getPlacesByUser;
 exports.createPlace = createPlace;
 exports.getAllPlaces = getAllPlaces;
+exports.updatePlace = updatePlace;
+exports.delPlace = delPlace;
